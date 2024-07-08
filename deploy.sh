@@ -1,10 +1,9 @@
 #! /bin/bash
 # GET CURRENT BRANCH:
 BRANCH_NAME=$(env.GIT_BRANCH.split['/'].last())
+echo "Deploying branch: \${BRANCH_NAME}"
 
-
-
-if ["$BRANCH_NAME" -eq "dev"]; then
+if [ "$BRANCH_NAME" -eq "dev" ]; then
     sh 'chmod +x build.sh'
     sh './build.sh'
     echo "haiiii dev"
@@ -14,7 +13,7 @@ if ["$BRANCH_NAME" -eq "dev"]; then
     docker push $DOCKER_REPO:${BUILD_NUMBER}
     docker push $DOCKER_REPO:latest
 
-elif ["$BRANCH_NAME" -eq "main"]; then
+elif [ "$BRANCH_NAME" -eq "main" ]; then
     sh 'chmod +x build.sh'
     sh './build.sh'
     echo "haiiii dev"
