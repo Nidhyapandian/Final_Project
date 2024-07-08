@@ -1,6 +1,6 @@
 #! /bin/bash
 # GET CURRENT BRANCH:
-BRANCH_NAME=$(env.GIT_BRANCH.split['/'].last())
+BRANCH_NAME=$(env.GIT_BRANCH.split['2'].last())
 echo "Deploying branch: \${BRANCH_NAME}"
 
 if [ "$BRANCH_NAME" -eq "dev" ]; then
