@@ -1,7 +1,7 @@
 #! /bin/bash
 # GET CURRENT BRANCH:
-BRANCH_NAME = env.GIT_BRANCH.split('/').last()
-BRANCH_NAME=$(git rev-parse --abbrev -ref HEAD)
+BRANCH_NAME=env.GIT_BRANCH.split('/').last()
+
 
 
 if ["$BRANCH_NAME"="dev"]; then
