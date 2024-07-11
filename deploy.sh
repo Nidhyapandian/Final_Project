@@ -1,7 +1,7 @@
 #! /bin/bash
 # GET CURRENT BRANCH:
 BRANCH_NAME=${BRANCH_NAME:-$(git rev-parse --abbrev-ref HEAD)}
-echo "Deploying branch: \${BRANCH_NAME}"
+echo "Deploying branch: ${BRANCH_NAME}"
 
 if [[ "$BRANCH_NAME" == "dev" ]]; then
     sh 'chmod +x build.sh'
